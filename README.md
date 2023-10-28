@@ -48,8 +48,7 @@ https://github.com/tonsky/FiraCode/wiki/Installing
     "editor.cursorStyle": "block",
     "editor.cursorBlinking": "phase",
     "window.title": "${rootName}${separator}${rootPath}${separator}${activeEditorShort}",
-    "window.menuBarVisibility": "compact",
-    "workbench.sideBar.location": "right",
+    "window.menuBarVisibility": "compact",",
     "editor.cursorSurroundingLines": 4,
     // Disable confirmation stuff 
     "terminal.integrated.enableMultiLinePasteWarning": false,
