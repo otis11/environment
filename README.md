@@ -50,6 +50,7 @@ https://github.com/tonsky/FiraCode/wiki/Installing
     "window.title": "${rootName}${separator}${rootPath}${separator}${activeEditorShort}",
     "window.menuBarVisibility": "compact",
     "editor.cursorSurroundingLines": 4,
+    "workbench.activityBar.location": "top",
     // Disable confirmation stuff 
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "explorer.confirmDragAndDrop": false,
@@ -92,7 +93,8 @@ https://github.com/tonsky/FiraCode/wiki/Installing
     },
     "tailwindCSS.emmetCompletions": true,
     "files.associations": {
-        ".env": "dotenv"
+        ".env": "dotenv",
+        ".env*": "dotenv"
     },
     "dotenv.enableAutocloaking": false,
     // idk, maybe try 
