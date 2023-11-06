@@ -9,8 +9,8 @@
     "editor.cursorBlinking": "phase",
     "window.title": "${rootName}${separator}${rootPath}${separator}${activeEditorShort}",
     "window.menuBarVisibility": "compact",
-    "workbench.sideBar.location": "right",
     "editor.cursorSurroundingLines": 4,
+    "workbench.activityBar.location": "top",
     // Disable confirmation stuff 
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "explorer.confirmDragAndDrop": false,
@@ -53,7 +53,8 @@
     },
     "tailwindCSS.emmetCompletions": true,
     "files.associations": {
-        ".env": "dotenv"
+        ".env": "dotenv",
+        ".env*": "dotenv"
     },
     "dotenv.enableAutocloaking": false,
     // idk, maybe try 
