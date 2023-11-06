@@ -1,0 +1,61 @@
+{
+    // some useful shortcuts
+    // ctrl +               space completion in context
+    // ctrl + t             search symbol in workspace
+    // ctrl + p             execute command
+    // alt + shift + o      organize imports 
+    "editor.inlineSuggest.enabled": true,
+    "editor.cursorStyle": "block",
+    "editor.cursorBlinking": "phase",
+    "window.title": "${rootName}${separator}${rootPath}${separator}${activeEditorShort}",
+    "window.menuBarVisibility": "compact",
+    "workbench.sideBar.location": "right",
+    "editor.cursorSurroundingLines": 4,
+    // Disable confirmation stuff 
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    // Disable other stuff/declutter UI
+    "terminal.integrated.showExitAlert": false,
+    "workbench.tips.enabled": false,
+    "workbench.startupEditor": "none",
+    "workbench.layoutControl.enabled": false,
+    "breadcrumbs.enabled": false,
+    "explorer.openEditors.visible": 0,
+    "editor.minimap.enabled": false,
+    "editor.guides.indentation": false,
+    "editor.lineNumbers": "off",
+    // File tree view
+    "explorer.compactFolders": false,
+    "workbench.tree.indent": 16,
+    "workbench.tree.renderIndentGuides": "none",
+    // Format & Autosave
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "files.autoSave": "onWindowChange",
+    // Font
+    "terminal.integrated.fontFamily": "Fira Code",
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    /// Git 
+    /// otherwise it will do merge stuff which makes git history bad 
+    /// https://github.com/microsoft/vscode/issues/174198 
+    "git.rebaseWhenSync": true,
+    /// Languages & Tools
+    "eslint.validate": [
+        "vue",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "tailwindCSS.emmetCompletions": true,
+    "files.associations": {
+        ".env": "dotenv"
+    },
+    "dotenv.enableAutocloaking": false,
+    // idk, maybe try 
+    "editor.guides.bracketPairs": false
+}

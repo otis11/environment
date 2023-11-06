@@ -1,6 +1,7 @@
 # Table of contents
 * [SSH Keys](#ssh-keys)
 * [Windows Envrionment](#windows-environment)
+* [Ubuntu Initial Installs](#ubuntu-initial-installs)
 * [VSCode](#vscode)
 
 # SSH Keys
@@ -32,92 +33,40 @@ pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
 2. Add `C:\Program Files\Git\cmd` to [Path](#add-bin-to-path)
 3. Open new `cmd` and use `git`
 
+# Ubuntu Initial Installs
+```bash
+# update the system
+sudo apt update -y && sudo apt upgrade -y
+
+# install curl
+sudo apt install curl -y
+
+# install firacode font
+sudo apt install fonts-firacode -y
+
+# install vscode
+sudo apt-get install wget gpg
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
+sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+rm -f packages.microsoft.gpg
+
+sudo apt install apt-transport-https
+sudo apt update
+sudo apt install code # or code-insiders
+
+# download custom settings.json into vscode
+curl https://raw.githubusercontent.com/eat4/environment/main/vscode/settings.json > ~/.config/Code/User/settings.json
+curl https://raw.githubusercontent.com/eat4/environment/main/vscode/keybindings.json > ~/.config/Code/User/keybindings.json
+```
+
 # VSCode
 ### Font: Fira Code
 https://github.com/tonsky/FiraCode/wiki/Installing
 
-### user settings.json
-```json
-{
-    // some useful shortcuts
-    // ctrl +               space completion in context
-    // ctrl + t             search symbol in workspace
-    // ctrl + p             execute command
-    // alt + shift + o      organize imports 
-    "editor.inlineSuggest.enabled": true,
-    "editor.cursorStyle": "block",
-    "editor.cursorBlinking": "phase",
-    "window.title": "${rootName}${separator}${rootPath}${separator}${activeEditorShort}",
-    "window.menuBarVisibility": "compact",
-    "editor.cursorSurroundingLines": 4,
-    "workbench.activityBar.location": "top",
-    // Disable confirmation stuff 
-    "terminal.integrated.enableMultiLinePasteWarning": false,
-    "explorer.confirmDragAndDrop": false,
-    "explorer.confirmDelete": false,
-    // Disable other stuff/declutter UI
-    "terminal.integrated.showExitAlert": false,
-    "workbench.tips.enabled": false,
-    "workbench.startupEditor": "none",
-    "workbench.layoutControl.enabled": false,
-    "breadcrumbs.enabled": false,
-    "explorer.openEditors.visible": 0,
-    "editor.minimap.enabled": false,
-    "editor.guides.indentation": false,
-    "editor.lineNumbers": "off",
-    // File tree view
-    "explorer.compactFolders": false,
-    "workbench.tree.indent": 16,
-    "workbench.tree.renderIndentGuides": "none",
-    // Format & Autosave
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
-    "files.autoSave": "onWindowChange",
-    // Font
-    "terminal.integrated.fontFamily": "Fira Code",
-    "editor.fontFamily": "Fira Code",
-    "editor.fontLigatures": true,
-    /// Git 
-    /// otherwise it will do merge stuff which makes git history bad 
-    /// https://github.com/microsoft/vscode/issues/174198 
-    "git.rebaseWhenSync": true,
-    /// Languages & Tools
-    "eslint.validate": [
-        "vue",
-        "javascript",
-        "javascriptreact",
-        "typescript",
-    ],
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
-    "tailwindCSS.emmetCompletions": true,
-    "files.associations": {
-        ".env": "dotenv",
-        ".env*": "dotenv"
-    },
-    "dotenv.enableAutocloaking": false,
-    // idk, maybe try 
-    "editor.guides.bracketPairs": false,
-}
-```
-### keybindings.json
-```json
-[
-    // so comment lines moves the cursor down after commenting. Easy to comment multiple lines
-    {
-        "key": "ctrl+/",
-        "command": "runCommands",
-        "args": {
-            "commands": [
-                "editor.action.commentLine",
-                "cursorDown"
-            ]
-        },
-        "when": "editorTextFocus"
-    },
-]
-```
+- User [settings.json](./vscode/settings.json)
+- [keybindings.json](./vscode/keybindings.json)
+
 ### extensions
 ```text
 EditorConfig.EditorConfig

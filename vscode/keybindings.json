@@ -1,0 +1,14 @@
+[
+    // so comment lines moves the cursor down after commenting. Easy to comment multiple lines
+    {
+        "key": "ctrl+/",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "editor.action.commentLine",
+                "cursorDown"
+            ]
+        },
+        "when": "editorTextFocus"
+    },
+]
