@@ -3,6 +3,7 @@
 * [Windows Envrionment](#windows-environment)
 * [Ubuntu Initial Installs](#ubuntu-initial-installs)
 * [VSCode](#vscode)
+* [Ubuntu Server on Laptop](#ubuntu-server-on-laptop)
 
 # SSH Keys
 Create a ssh key on your machine.
@@ -73,4 +74,30 @@ EditorConfig.EditorConfig
 dotenv.dotenv-vscode
 ms-vscode.cpptools
 ms-vscode-remote.remote-wsl
+```
+
+# Ubuntu Server on Laptop
+### Disable Closing Lid Sleep Mode
+```bash
+sudo vim /etc/systemd/logind.conf
+# change these
+#HandleLidSwitch=suspend
+HandleLidSwitch=ignore
+
+#LidSwitchIgnoreInhibited=yes
+LidSwitchIgnoreInhibited=no
+
+# restart service
+sudo service systemd-logind restart
+```
+
+### Turn the screen of the Laptop off/on (does not work via remote ssh, only directly on the machine)
+```bash
+# off
+setterm --blank force
+
+# on
+setterm --blank poke
+
+# put them into bash aliases as screenoff/on
 ```
