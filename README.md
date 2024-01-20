@@ -57,8 +57,8 @@ sudo apt update
 sudo apt install code # or code-insiders
 
 # download custom settings.json into vscode
-curl https://raw.githubusercontent.com/eat4/environment/main/vscode/settings.json > ~/.config/Code/User/settings.json
-curl https://raw.githubusercontent.com/eat4/environment/main/vscode/keybindings.json > ~/.config/Code/User/keybindings.json
+curl https://raw.githubusercontent.com/otis11/environment/main/vscode/settings.json > ~/.config/Code/User/settings.json
+curl https://raw.githubusercontent.com/otis11/environment/main/vscode/keybindings.json > ~/.config/Code/User/keybindings.json
 ```
 
 # VSCode
