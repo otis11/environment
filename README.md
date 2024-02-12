@@ -4,6 +4,7 @@
 * [Ubuntu Initial Installs](#ubuntu-initial-installs)
 * [VSCode](#vscode)
 * [Ubuntu Server on Laptop](#ubuntu-server-on-laptop)
+* [Git](#git)
 
 # SSH Keys
 Create a ssh key on your machine.
@@ -100,4 +101,32 @@ setterm --blank force
 setterm --blank poke
 
 # put them into bash aliases as screenoff/on
+```
+
+# Git
+### Config
+```bash
+# improve git branch ui
+git config --global column.ui auto
+git config --global branch.sort -committerdate
+
+# reuse recorded resolution -> if merge conflict was resolved previously use that resolution and skip
+git config --global rerere.enabled true
+```
+
+### Commands
+```bash
+# improve performance inside a specific git repo
+git maintance start
+
+# save push, if origin has new commit dont force push
+git push --force-with-lease
+
+# log for specific lines
+git log -L 15,26:path/to/file
+# blame ignore file/code movement
+git blame -w -C -C -C 15,26:path/to/file
+
+# search for changes containing string
+git log -S STRING -p
 ```
