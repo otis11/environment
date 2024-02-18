@@ -5,10 +5,8 @@
     // ctrl + p             execute command
     // alt + shift + o      organize imports 
     "editor.inlineSuggest.enabled": true,
-    "editor.cursorStyle": "block",
-    "editor.cursorBlinking": "phase",
+    "workbench.colorTheme": "GitHub Dark",
     "window.title": "${rootName}${separator}${rootPath}${separator}${activeEditorShort}",
-    "window.menuBarVisibility": "compact",
     "editor.cursorSurroundingLines": 4,
     "workbench.activityBar.location": "top",
     // Disable confirmation stuff 
@@ -18,17 +16,12 @@
     // Disable other stuff/declutter UI
     "terminal.integrated.showExitAlert": false,
     "workbench.tips.enabled": false,
-    "workbench.startupEditor": "none",
-    "workbench.layoutControl.enabled": false,
-    "breadcrumbs.enabled": false,
-    "explorer.openEditors.visible": 0,
     "editor.minimap.enabled": false,
-    "editor.guides.indentation": false,
-    "editor.lineNumbers": "off",
+    "workbench.startupEditor": "none",
+    "explorer.openEditors.visible": 0,
     // File tree view
     "explorer.compactFolders": false,
     "workbench.tree.indent": 16,
-    "workbench.tree.renderIndentGuides": "none",
     // Format & Autosave
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
@@ -38,7 +31,7 @@
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
     /// Git 
-    /// otherwise it will do merge stuff which makes git history bad 
+    /// otherwise it will do merge stuff
     /// https://github.com/microsoft/vscode/issues/174198 
     "git.rebaseWhenSync": true,
     /// Languages & Tools
@@ -46,18 +39,16 @@
         "vue",
         "javascript",
         "javascriptreact",
-        "typescript",
+        "typescript"
     ],
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true,
-        "source.organizeImports": true
+        "source.fixAll.eslint": "explicit",
+        "source.organizeImports": "explicit"
     },
     "tailwindCSS.emmetCompletions": true,
     "files.associations": {
         ".env": "dotenv",
         ".env*": "dotenv"
     },
-    "dotenv.enableAutocloaking": false,
-    // idk, maybe try 
-    "editor.guides.bracketPairs": false
+    "dotenv.enableAutocloaking": false
 }

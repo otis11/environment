@@ -1,41 +1,54 @@
 # Table of contents
-* [SSH Keys](#ssh-keys)
-* [Windows Envrionment](#windows-environment)
-* [Ubuntu Initial Installs](#ubuntu-initial-installs)
-* [VSCode](#vscode)
-* [Ubuntu Server on Laptop](#ubuntu-server-on-laptop)
-* [Git](#git)
+
+- [SSH Keys](#ssh-keys)
+- [Windows Envrionment](#windows-environment)
+- [Ubuntu Initial Installs](#ubuntu-initial-installs)
+- [VSCode](#vscode)
+- [Ubuntu Server on Laptop](#ubuntu-server-on-laptop)
+- [Git](#git)
+- [Terminal](#terminal)
 
 # SSH Keys
+
 Create a ssh key on your machine.
+
 ```bash
 ssh-keygen -t ed25519
 cat ~/.ssh/id_ed25519.pub
 ```
+
 SSH Key Settings:
+
 - [GitHub](https://github.com/settings/keys)
 
 # Windows Environment
+
 ### Add bin to PATH
+
 1. Go to `Edit environment variables for your account` (just search)
 2. Under `User variables for X` select `Path` and click `Edit`
 3. Click on `New` and add the absolute path to the folder
 
 ### C++ Compiler
+
 1. Install [msys2](https://www.msys2.org/)
 2. Install mingw toolchain
+
 ```bash
 pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
 ```
+
 3. Add `C:\msys64\ucrt64\bin` to [PATH](#add-bin-to-path)
 4. Open new `cmd` and use `gcc`
 
 ### Git
+
 1. Install [Git for Windows](https://git-scm.com/download/win)
 2. Add `C:\Program Files\Git\cmd` to [Path](#add-bin-to-path)
 3. Open new `cmd` and use `git`
 
 # Ubuntu Initial Installs
+
 ```bash
 # update the system
 sudo apt update -y && sudo apt upgrade -y
@@ -63,13 +76,16 @@ curl https://raw.githubusercontent.com/otis11/environment/main/vscode/keybinding
 ```
 
 # VSCode
+
 ### Font: Fira Code
+
 https://github.com/tonsky/FiraCode/wiki/Installing
 
 - User [settings.json](./vscode/settings.json)
 - [keybindings.json](./vscode/keybindings.json)
 
 ### extensions
+
 ```text
 EditorConfig.EditorConfig
 dotenv.dotenv-vscode
@@ -78,7 +94,9 @@ ms-vscode-remote.remote-wsl
 ```
 
 # Ubuntu Server on Laptop
+
 ### Disable Closing Lid Sleep Mode
+
 ```bash
 sudo vim /etc/systemd/logind.conf
 # change these
@@ -93,6 +111,7 @@ sudo service systemd-logind restart
 ```
 
 ### Turn the screen of the Laptop off/on (does not work via remote ssh, only directly on the machine)
+
 ```bash
 # off
 setterm --blank force
@@ -104,7 +123,9 @@ setterm --blank poke
 ```
 
 # Git
+
 ### Config
+
 ```bash
 # improve git branch ui
 git config --global column.ui auto
@@ -115,6 +136,7 @@ git config --global rerere.enabled true
 ```
 
 ### Commands
+
 ```bash
 # improve performance inside a specific git repo
 git maintance start
@@ -129,4 +151,18 @@ git blame -w -C -C -C 15,26:path/to/file
 
 # search for changes containing string
 git log -S STRING -p
+```
+
+# Terminal
+
+```bash
+# install zsh?
+# sudo apt install zsh
+
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# plugins
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 ```
